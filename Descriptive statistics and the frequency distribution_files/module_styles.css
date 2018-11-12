@@ -21,6 +21,10 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
     .asideTest > ul > li {
         display: inline;
     }
+    #mainContent { /* .mainContainer class selector didn't work b/c ID has higher specificity in CSS '*/
+        padding-left: 0;
+        width: 90%;
+    }
 }
 
 /*for most mobiles and ipads, take off the floats for nav div
@@ -37,8 +41,9 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
     .asideTest > ul > li {
         display: inline;
     }
-    .mainContainer {
-        padding-left: 40px;
+    #mainContent { /* .mainContainer class selector didn't work b/c ID has higher specificity in CSS '*/
+        padding-left: 0;
+        width: 100%;
     }
     
 }
@@ -46,11 +51,11 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
 /*style our nav tabs and list when screen is minimumf 800px*/
 @media screen and (min-width: 800px) {
     .asideTest {
-        width: 9%;
+        width: 15%;
         padding-top: 0;
         margin-top: 10%;
         float: left;
-        padding-right: 20px;
+        padding-left: 20px;
         text-align: center;
         border: 1px solid;
         border-color: #5d34af;
@@ -68,6 +73,7 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
        display: block;
        text-decoration: none;
     }
+    
 }
 
 
@@ -88,8 +94,10 @@ body{
 
 }
 
-div.mainContainer {
-    width: 80%;
+.mainContainer {
+    width: 60%;
+    padding-left: 90px;
+    margin: 0 auto;
     display: block;
     float: left;
     /*padding: 15px;*/
@@ -985,7 +993,7 @@ div.itemInd{
 div.homelinkLine{
     display: block;
     /*border: 2px solid purple;*/
-    width: 400px;
+    /*width: 400px; if we cut this, the line after data 102 home index will collapse w/ screen size...otherwise it is off screen!*/
     position: relative;
     overflow: hidden;
     margin-top: 5px;
