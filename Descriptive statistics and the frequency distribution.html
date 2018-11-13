@@ -305,7 +305,9 @@
                     /*loop through array of our id values to hide at once rather than an
                      *ugly list of functions....
                      */
+                    
                     function hideDivs() {
+                        'use strict';
                         var arr = ["#externalResources", "#workspace", "#exercises", "#miniProject"];
                         for(var i=0; i <= arr.length-1; i++){
                             $(arr[i]).hide();
