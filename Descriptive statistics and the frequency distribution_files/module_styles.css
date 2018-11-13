@@ -25,6 +25,9 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
         padding-left: 0;
         width: 90%;
     }
+    #navTitle {
+        text-align: center;
+    }
 }
 
 /*for most mobiles and ipads, take off the floats for nav div
@@ -45,6 +48,9 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
         padding-left: 0;
         width: 100%;
     }
+    #navTitle {
+        text-align: center;
+    }
     
 }
 
@@ -63,6 +69,7 @@ https://material.io/color/#!/?view.left=0&view.right=0&primary.color=5d34af&seco
         border-bottom: none; 
         border-right: none;
         border-top: none;
+        position: fixed;
     }
     .asideTest > ul {
        text-decoration: none;
@@ -99,7 +106,7 @@ body{
     padding-left: 90px;
     margin: 0 auto;
     display: block;
-    float: left;
+    /*float: left; remove float and add position: fixed; above in screen size to keep panel docked on desktop*/
     /*padding: 15px;*/
 }
 

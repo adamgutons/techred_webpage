@@ -16,7 +16,7 @@
 
     <body>
         <div id="asideCollapse" class="asideTest">
-            <h3 class="navTitle">Module Links</h3>
+            <h3 class="navTitle" id="navTitle">Module Links</h3>
             <ul>
                 <li><button class="navButton" id="showModuleContents">Contents</button></li>
                 <li><button class="navButton" id="showExternalResources">Resources</button></li>
@@ -177,7 +177,7 @@
 
 
 
-            <h2 id="workspace"><i class="material-icons">web</i>Set up your workspace </h2>
+            <h2><i class="material-icons">web</i>Set up your workspace </h2>
             <ol>
                 <li>You'll need only a spreadsheet program of your choosing: Libre 
                     Office's Open Source spreadsheet Calc, OSX Numbers, Microsoft 
@@ -302,50 +302,64 @@
 
 
                     <script type="text/javascript">
+                    /*loop through array of our id values to hide at once rather than an
+                     *ugly list of functions....
+                     */
+                    function hideDivs() {
+                        var arr = ["#externalResources", "#workspace", "#exercises", "#miniProject"];
+                        for(var i=0; i <= arr.length-1; i++){
+                            $(arr[i]).hide();
+                        };
+                    };
+                    hideDivs();
+                    
+                    /*
                     $("#externalResources").hide();
                     $("#workspace").hide();
                     $("#exercises").hide();
                     $("#miniProject").hide();
-                    var i = 0;
+                    */
+                   
+                    /*this is for erics revision history button at top left of page*/
                     $("#page-history-button").click(function () {
                         $("#history").toggle(1000);
                     });
+                    
+                    /*these functions hide other divs and show others depending on butotn click*/
                     $("#showModuleContents").click(function () {
-                        $("#externalResources").hide();
-                        $("#workspace").hide();
-                        $("#exercises").hide();
-                        $("#miniProject").hide();
+                        hideDivs();
                         $("#moduleContents").show();
                     });
                     $("#showExternalResources").click(function () {
-                        $("#moduleContents").hide();
-                        $("#workspace").hide();
-                        $("#exercises").hide();
-                        $("#miniProject").hide();
+                        var arr = ["#moduleContents", "#workspace", "#exercises", "#miniProject"];
+                        for(var i=0; i <= arr.length-1; i++){
+                            $(arr[i]).hide();
+                        };
                         $("#externalResources").show();
                     });
                     
                     $("#showWorkspace").click(function () {
-                        $("#moduleContents").hide();
-                        $("#externalResources").hide();
-                        $("#exercises").hide();
-                        $("#miniProject").hide();
+                        var arr = ["#moduleContents", "#externalResources", "#exercises", "#miniProject"];
+                        for(var i=0; i <= arr.length-1; i++){
+                            $(arr[i]).hide();
+                        };
                         $("#workspace").show();
                     });
                     $("#showExercises").click(function () {
-                        $("#moduleContents").hide();
-                        $("#externalResources").hide();
-                        $("#workspace").hide();
-                        $("#miniProject").hide();
+                        var arr = ["#moduleContents", "#externalResources", "#workspace", "#miniProject"];
+                        for(var i=0; i <= arr.length-1; i++){
+                            $(arr[i]).hide();
+                        };
                         $("#exercises").show();
                     });
                     $("#showMiniProject").click(function () {
-                         $("#moduleContents").hide();
-                         $("#externalResources").hide();
-                         $("#workspace").hide();
-                         $("#exercises").hide();
+                         var arr = ["#moduleContents", "#externalResources", "#workspace", "#exercises"];
+                         for(var i=0; i <= arr.length-1; i++){
+                             $(arr[i]).hide();
+                         };
                          $("#miniProject").show();
                      });
+                     
                     $("#goHome").click(function () {
                         window.open("https://technologyrediscovery.net/", "_self"); //gets back to homepage via home button
                     }); 
